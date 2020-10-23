@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     #our apps
     'products',
+    'search',
 ]
 SLUGIFY_PROCESSORS = [
    'project.app.slugify_processors.my_processor'

@@ -2,9 +2,7 @@ from django.db import models
 import random
 import os
 from django.template.defaultfilters import slugify
-#from django_slugify_processor.text import slugify
-from autoslug import AutoSlugField
-#from django.db.models.signals import pre_save, post_save
+from django.urls import reverse
 import uuid
 # Create your models here.
 
@@ -59,16 +57,21 @@ class Product(models.Model):
     image = models.ImageField(upload_to=upload_image_path, null=True, blank=True)
     featured = models.BooleanField(default=False)
     active = models.BooleanField(default=True)
-
+    timestamp       = models.DateTimeField(auto_now_add=True)
     objects = ProductManager()
 
 
     def get_absolute_url(self):
-        return "/products/{slug}/".format(slug=self.slug)
+        #return "/products/{slug}/".format(slug=self.slug)
+        return reverse("products:detail", kwargs={"slug": self.slug})
+
+
     def __str__(self):
         return self.title
 
-def save(self, *args, **kwargs):
+
+
+    def save(self, *args, **kwargs):
         self.url= slugify(self.title)
         super(Product, self).save(*args, **kwargs)    
 

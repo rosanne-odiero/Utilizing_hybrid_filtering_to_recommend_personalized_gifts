@@ -6,9 +6,9 @@ from products.views import(
         ProductDetailSlugView
         )
 
-
+app_name = 'products'
 urlpatterns = [
-    path('<slug:slug>/', ProductDetailSlugView.as_view(), name='product'),
-    path('', ProductListView.as_view(), name='product')
+    path('<slug:slug>/', ProductDetailSlugView.as_view(), name='detail'),
+    path('', ProductListView.as_view(), name='list')
     
 ]

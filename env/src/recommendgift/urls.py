@@ -19,7 +19,6 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
-
 '''from products.views import(
         ProductListView, 
         product_list_view, 
@@ -32,12 +31,13 @@ from django.conf.urls import url, include
 from . import views
 
 urlpatterns = [
-    path('', views.home_page, name='index'),
+    path('', views.home_page, name='home'),
     path('about/', views.about_page, name='about'),
     path('contact/', views.contact_page, name='contact'),
     path('login/', views.login_page, name='login'),
     path('register/', views.register_page, name='register'),
-    path('products/', include('products.urls')),
+    path('products/', include('products.urls', namespace='products')),
+    path('search/', include('search.urls', namespace='search')),
     path('admin/', admin.site.urls)
     #path('featured/', ProductFeaturedListView.as_view(), name='featured'),
     #path('featured/<int:pk>/', ProductFeaturedDetailView.as_view(), name='featuredfbv'),
