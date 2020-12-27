@@ -176,7 +176,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = PROJECT_DIR /'static_cdn/media_root'
 PROTECTED_ROOT =  PROJECT_DIR /'static_cdn/protected_media'
 
-from ecommerce.aws.conf import *
+#from ecommerce.aws.conf import *
 
 
 CORS_REPLACE_HTTPS_REFERER      = False

@@ -12,39 +12,31 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 from pathlib import Path
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 PROJECT_DIR=Path(__file__).resolve().parent.parent.parent.parent
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = '@!-)jwmuzh8btr380g61=g+#&zzei&dz2(&=xbvxztady)_p(r'
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
-
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'rosanne.odiero@strathmore.edu' 
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'Icarly415')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'GiftIt Recommendation <rosanne.odiero@strathmore.edu>'
-BASE_URL = ''
+BASE_URL = '127.0.0.1:8000'
 
 MANAGERS = (
     ('Odiero Rosanne', "rosanne.odiero@strathmore.edu"),
 )
 
-ADMINS = MANAGERS
-
-
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['.pythonecommerce.com']
 
 
 # Application definition
@@ -133,11 +125,6 @@ DATABASES = {
     }
 }
 
-import dj_database_url
-db_from_env = dj_database_url.config() #postgreSQL Database in heroku
-DATABASES['default'].update(db_from_env)
-DATABASES['default']['CONN_MAX_AGE'] = 500
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -163,7 +150,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Los_Angeles' #'UTC'
 
 USE_I18N = True
 
@@ -174,7 +161,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static_my_proj',  
@@ -188,21 +174,15 @@ PROTECTED_ROOT =  PROJECT_DIR /'static_cdn/protected_media'
 #from ecommerce.aws.conf import *
 
 
-
-# Let's Encrypt ssl/tls https
-
-CORS_REPLACE_HTTPS_REFERER      = True
-HOST_SCHEME                     = "https://"
-SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT             = True
-SESSION_COOKIE_SECURE           = True
-CSRF_COOKIE_SECURE              = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
-SECURE_HSTS_SECONDS             = 1000000
-SECURE_FRAME_DENY               = True
-
-
-
+CORS_REPLACE_HTTPS_REFERER      = False
+HOST_SCHEME                     = "http://"
+SECURE_PROXY_SSL_HEADER         = None
+SECURE_SSL_REDIRECT             = False
+SESSION_COOKIE_SECURE           = False
+CSRF_COOKIE_SECURE              = False
+SECURE_HSTS_SECONDS             = None
+SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
+SECURE_FRAME_DENY               = False
 
 
 
