@@ -45,6 +45,7 @@ urlpatterns = [
     path('logout/',  LogoutView.as_view(), name='logout'),
     path('api/cart/', cart_detail_api_view, name='api-cart'),
     path('cart/', include('carts.urls', namespace='cart')),
+    path('recommendation/', include('recommendation.urls', namespace='recommendation')),
     path('billing/payment-method/', payment_method_view, name='billing-payment-method'),
     path('billing/payment-method/create/', payment_method_createview, name='billing-payment-method-endpoint'),
     path('register/',  RegisterView.as_view(), name='register'),

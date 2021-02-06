@@ -9,7 +9,7 @@ class ProductFileInline(admin.TabularInline):
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['__str__', 'slug', 'is_digital']
+    list_display = ['__str__', 'slug', 'price']
     inlines = [ProductFileInline]
     class Meta:
         model = Product

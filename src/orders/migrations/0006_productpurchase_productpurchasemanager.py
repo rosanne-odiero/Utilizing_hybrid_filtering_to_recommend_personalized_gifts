@@ -10,7 +10,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('products', '0010_product_is_digital'),
+        ('products', '0009_product_timestamp'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ('billing', '0007_auto_20171012_1935'),
         ('orders', '0005_auto_20171107_0035'),

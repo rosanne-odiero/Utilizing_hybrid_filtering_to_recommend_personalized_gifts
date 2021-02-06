@@ -232,8 +232,8 @@ class ProductPurchaseQuerySet(models.query.QuerySet):
     def active(self):
         return self.filter(refunded=False)
 
-    def digital(self):
-        return self.filter(product__is_digital=True)
+ #   def digital(self):
+ #       return self.filter(product__is_digital=True)
 
     def by_request(self, request):
         billing_profile, created = BillingProfile.objects.new_or_get(request)

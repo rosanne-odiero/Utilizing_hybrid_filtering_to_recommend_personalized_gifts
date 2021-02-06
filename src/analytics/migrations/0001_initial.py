@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
             options={
                 'verbose_name': 'Object viewed',
                 'verbose_name_plural': 'Objects viewed',
-                'ordering': ['-timestamp'],
+                
             },
         ),
     ]

@@ -61,7 +61,7 @@ class User(AbstractBaseUser):
     is_active   = models.BooleanField(default=True) # can login 
     staff       = models.BooleanField(default=False) # staff user non superuser
     admin       = models.BooleanField(default=False) # superuser 
-   # timestamp   = models.DateTimeField(auto_now_add=True)
+    timestamp   = models.DateTimeField(auto_now_add=True)
     # confirm     = models.BooleanField(default=False)
     # confirmed_date     = models.DateTimeField(default=False)
 
