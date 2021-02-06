@@ -29,15 +29,15 @@ ALLOWED_HOSTS = []
 
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'rosanne.odiero@strathmore.edu' 
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'Icarly415')
+EMAIL_HOST_USER = 'giftitrecommendation@gmail.com' 
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'Serenity76!')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'GiftIt Recommendation <rosanne.odiero@strathmore.edu>'
+DEFAULT_FROM_EMAIL = 'GiftIt Recommendation <giftitrecommendation@gmail.com>'
 BASE_URL = '127.0.0.1:8000'
 
 MANAGERS = (
-    ('Odiero Rosanne', "rosanne.odiero@strathmore.edu"),
+    ('Odiero Rosanne', "giftitrecommendation@gmail.com"),
 )
 
 ADMINS = MANAGERS

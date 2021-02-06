@@ -1,33 +1,56 @@
 {% load static %}
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <!-- Required meta tags -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Base Template</title>
-        {% include 'base/css.html' %}
-        {% block base_head %}{% endblock %}
-    </head>
-    <body>
-      {% include 'base/navbar.html' with brand_name='eCommerce' %}
-      <div class='container'>
-        {% if messages %}
-      <div class="alert alert-success messages">
-          {% for message in messages %}
-          <span{% if message.tags %} class="{{ message.tags }}"{% endif %}>
-              {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
-              {{ message }}<br/>
-          </span>
-          {% endfor %}
-      </div>
-      {% endif %}
-      {% block content %}{% endblock %}
+<html lang="en">
+
+<head>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="Odiero Rosanne" name="author">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SITE TITLE -->
+  <title>GiftIt Recommendation</title>
+  <!-- Favicon Icon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.png' % }">
+
+  {% include 'base/css.html' %}
+  {% block base_head %}{% endblock %}
+</head>
+
+<body>
+  <!-- LOADER -->
+  <div class="preloader">
+    <div class="lds-ellipsis">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+  </div>
+  <!-- END LOADER -->
+  {% include 'base/navigation.html'  %}
 
-        {% include 'base/js.html' %}
-        {% block javascript %}
 
-        {% endblock %}
-    </body>
-  </html>
+  
+  <div class='container'>
+    {% if messages %}
+    <div class="alert alert-success messages">
+      {% for message in messages %}
+      <span{% if message.tags %} class="{{ message.tags }}" {% endif %}>
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+        {{ message }}<br />
+        </span>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% block content %}{% endblock %}
+  </div>
+
+  {% include 'base/js.html' %}
+  {% include 'base/footer.html'  %}
+  {% block javascript %}
+
+  {% endblock %}
+</body>
+
+</html>

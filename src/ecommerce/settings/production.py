@@ -26,15 +26,15 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'rosanne.odiero@strathmore.edu' 
+EMAIL_HOST_USER = 'giftitrecommendation@gmail.com' 
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'GiftIt Recommendation <rosanne.odiero@strathmore.edu>'
+DEFAULT_FROM_EMAIL = 'GiftIt Recommendation <giftitrecommendation@gmail.com>'
 BASE_URL = ''
 
 MANAGERS = (
-    ('Odiero Rosanne', "rosanne.odiero@strathmore.edu"),
+    ('Odiero Rosanne', "giftitrecommendation@gmail.com"),
 )
 
 ADMINS = MANAGERS

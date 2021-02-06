@@ -9,7 +9,7 @@ ADDRESS_TYPES = (
 
 class Address(models.Model):
     billing_profile = models.ForeignKey(BillingProfile, on_delete=models.CASCADE)
-    full_name            = models.CharField(max_length=120, null=True, blank=True, help_text='Shipping to? Who is it for?')
+    full_name       = models.CharField(max_length=120, null=True, blank=True, help_text='Shipping to? Who is it for?')
     nickname        = models.CharField(max_length=120, null=True, blank=True, help_text='Internal Reference Nickname')
     address_type    = models.CharField(max_length=120, choices=ADDRESS_TYPES)
     address  = models.CharField(max_length=120)
@@ -36,7 +36,7 @@ class Address(models.Model):
                 address = self.address,
                 city = self.city
             ) 
-
+ 
     def get_address(self):
         return "{for_name}\n{address}\n{city}\n{county}, {postal}\n{country}".format(
                 for_name = self.full_name or "",

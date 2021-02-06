@@ -13,7 +13,7 @@ from .models import Product, ProductFile
 
 
 class ProductFeaturedListView(ListView):
-    template_name = "products/list.html"
+    template_name = "home_page.html"
 
     def get_queryset(self, *args, **kwargs):
         request = self.request
@@ -45,7 +45,7 @@ class UserProductHistoryView(LoginRequiredMixin, ListView):
 
 
 class ProductListView(ListView):
-    template_name = "products/list.html"
+    template_name = "home_page.html"
 
     # def get_context_data(self, *args, **kwargs):
     #     context = super(ProductListView, self).get_context_data(*args, **kwargs)
@@ -68,7 +68,7 @@ def product_list_view(request):
     context = {
         'object_list': queryset
     }
-    return render(request, "products/list.html", context)
+    return render(request, "home_page.html", context)
 
 
 

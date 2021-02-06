@@ -1,13 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-        <div class='row'>
-
-    {% for obj in object_list %}
-        <div class='col my-3'>
-        {% include 'products/snippets/card.html' with instance=obj %}  
-        
+<div class="section small_pt pb_20">
+    <div class="container">
+        <div class="row shop_container">
+            {% for obj in object_list %}
+            <div class="col-lg-3 col-md-4 col-6">          
+                {% include 'products/snippets/card.html' with instance=obj %}  
+                
+            </div>
+            {% endfor %}
         </div>
-    {% endfor %}
+    </div>
 </div>
 {% endblock %}

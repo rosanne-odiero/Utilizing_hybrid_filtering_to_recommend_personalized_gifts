@@ -55,12 +55,13 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser):
+    CustomerID   = models.CharField(max_length=255, blank=True, null=True)
     email       = models.EmailField(max_length=255, unique=True)
     full_name   = models.CharField(max_length=255, blank=True, null=True)
     is_active   = models.BooleanField(default=True) # can login 
     staff       = models.BooleanField(default=False) # staff user non superuser
     admin       = models.BooleanField(default=False) # superuser 
-    timestamp   = models.DateTimeField(auto_now_add=True)
+   # timestamp   = models.DateTimeField(auto_now_add=True)
     # confirm     = models.BooleanField(default=False)
     # confirmed_date     = models.DateTimeField(default=False)
 
