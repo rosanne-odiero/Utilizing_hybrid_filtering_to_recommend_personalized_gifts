@@ -62,7 +62,7 @@ INSTALLED_APPS = [
     'products',
     'search',
     'tags',
-    'recommendation'
+     'recommendation'
 ]
 
 AUTH_USER_MODEL = 'accounts.User' #changes the built-in user model to ours
@@ -198,6 +198,7 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
 SECURE_FRAME_DENY               = False
 
 
+UTILS_URL = os.path.join(BASE_DIR, 'recommendation/utils/recommendation.pkl')   
 
-
+PURCHASE_URL = os.path.join(BASE_DIR, 'recommendation/utils/recommendation_products.csv')
 

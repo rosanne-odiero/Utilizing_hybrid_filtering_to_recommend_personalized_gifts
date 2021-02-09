@@ -67,7 +67,7 @@ class ProductManager(models.Manager):
 
 class Product(models.Model):
     title           = models.CharField(max_length=120)
-    StockCode       = models.CharField(max_length=120, unique=False)
+    stockcode       = models.CharField(max_length=120, unique=False)
     slug            = models.SlugField(blank=True, unique=True)
     description     = models.TextField()
     price           = models.DecimalField(decimal_places=2, max_digits=20, default=39.99)

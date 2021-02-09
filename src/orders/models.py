@@ -12,6 +12,7 @@ from billing.models import BillingProfile
 from carts.models import Cart
 from ecommerce.utils import unique_order_id_generator
 from products.models import Product
+from accounts.models import User
 
 ORDER_STATUS_CHOICES = (
     ('created', 'Created'),
@@ -125,6 +126,7 @@ class Order(models.Model):
     active              = models.BooleanField(default=True)
     updated             = models.DateTimeField(auto_now=True)
     timestamp           = models.DateTimeField(auto_now_add=True)
+    #CustomerID= models.ForeignKey(User,on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.order_id

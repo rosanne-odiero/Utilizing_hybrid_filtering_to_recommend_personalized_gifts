@@ -8,6 +8,7 @@
 
 {% url 'account:home' as account_url %}
 {% url 'cart:home' as cart_url %}
+{% url 'recommendation:recommend' as recommend_url %}
 
 <header class="header_wrap fixed-top header_with_topbar">
     <div class="top-header">
@@ -47,7 +48,11 @@
                             <li><a href="compare.html"><i class="ti-control-shuffle"></i><span>Compare</span></a></li>
                             <li><a href="wishlist.html"><i class="ti-heart"></i><span>Wishlist</span></a></li>
                             <li class="nav-item {% if request.path == product_list_url %}active{% endif %}">
+                                <a class="nav-link" href="{{ recommend_url }}">Recommend Gift</a>
+                              </li>
+                            <li class="nav-item {% if request.path == product_list_url %}active{% endif %}">
                                 <a class="nav-link" href="{{ product_list_url }}">Products</a>
+
                             {% if request.user.is_authenticated %}
                             <li><a href="{{ logout_url }}"><i class="ti-user"></i><span>Logout</span></a></li>
                             {% else %}

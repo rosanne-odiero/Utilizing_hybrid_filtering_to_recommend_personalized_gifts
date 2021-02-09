@@ -4,7 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView, DetailView, View
 from django.shortcuts import render, get_object_or_404, redirect
-
+from django.core.paginator import Paginator
 from analytics.mixins import ObjectViewedMixin
 
 from carts.models import Cart
@@ -46,7 +46,7 @@ class UserProductHistoryView(LoginRequiredMixin, ListView):
 
 class ProductListView(ListView):
     template_name = "home_page.html"
-
+    paginate_by = 28
     # def get_context_data(self, *args, **kwargs):
     #     context = super(ProductListView, self).get_context_data(*args, **kwargs)
     #     print(context)

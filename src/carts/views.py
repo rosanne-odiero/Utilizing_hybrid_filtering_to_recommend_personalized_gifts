@@ -81,7 +81,7 @@ def checkout_home(request):
     address_form = AddressCheckoutForm()
     billing_address_id = request.session.get("billing_address_id", None)
 
-    shipping_address_required = not cart_obj.is_digital
+    #shipping_address_required = not cart_obj.is_digital
 
 
     shipping_address_id = request.session.get("shipping_address_id", None)
